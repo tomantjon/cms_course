@@ -1,0 +1,121 @@
+\documentclass[english,dit,thesis]{hogentreport}
+\graphicspath{{img/}{graphics/}}
+
+%% For source code highlighting, requires pygments to be installed
+%% Compile with the -shell-escape flag!
+%% Titelpagina
+\usepackage{hogent-titlepage-image}
+
+\usepackage[section]{minted}
+\usemintedstyle{solarized-light}
+\definecolor{bg}{RGB}{253,246,227} %% Set the background color of the codeframe
+%% Change this line to edit the line numbering style:
+\renewcommand{\theFancyVerbLine}{\ttfamily\scriptsize\arabic{FancyVerbLine}}
+
+%% Macro definition to load external java source files with \javacode{filename}:
+\newmintedfile[javacode]{java}{
+    bgcolor=bg,
+    fontfamily=tt,
+    linenos=true,
+    numberblanklines=true,
+    numbersep=5pt,
+    gobble=0,
+    framesep=2mm,
+    funcnamehighlighting=true,
+    tabsize=4,
+    obeytabs=false,
+    breaklines=true,
+    mathescape=false
+    samepage=false,
+    showspaces=false,
+    showtabs =false,
+    texcl=false,
+}
+
+%% Settings:
+\author{Tom Antjon}
+\title{Content~\\Management~\\Systems}
+\academicyear{\advance\year by -1 \the\year--\advance\year by 1 \the\year}
+\partialthesis{false} %% To display 'in partial fulfilment'
+%\institution{Internshipcompany BVBA.}
+
+%% Add global exceptions to the hyphenation here
+\hyphenation{back-slash}
+
+%% The bibliography (style and settings are  found in hogentthesis.cls)
+\addbibresource{bibliography.bib}        %% Biblatex bibliography file
+\defbibheading{bibempty}{}
+
+%% Prevent empty pages for right-handed chapter starts in twoside mode
+\renewcommand{\cleardoublepage}{\clearpage}
+
+\renewcommand{\arraystretch}{1.2}
+
+%% Content starts here.
+\begin{document}
+
+    \inserttitlepage{achtergrond-ozt.png}
+
+%-----------------------------------------------------------------------------
+% Copyright
+%-----------------------------------------------------------------------------
+
+\newpage
+
+\thispagestyle{empty}
+
+\vspace*{20cm}
+
+\noindent Copyright \copyright\ 2023-{\the\year} Tom Antjon % Copyright notice
+
+\noindent \textsc{www.hogent.be} % URL
+
+\noindent \textit{Gegenereerd op \today} % Printing/edition date
+
+%-----------------------------------------------------------------------------
+% Inhoudstafel
+%-----------------------------------------------------------------------------
+
+\usechapterimagefalse
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\def\R{\mathbb{R}}
+
+%-----------------------------------------------------------------------------
+% Corpus
+%-----------------------------------------------------------------------------
+
+\include{1_intro}
+\include{2_Installation}
+\include{3_Creating a Drupal Site}
+\include{4_Drupal Structure}
+\include{5_Creating Content}
+\include{6_Users}
+\include{7_Views}
+\include{8_Multilingual and Translations}
+\include{9_Drupal Theming}
+\include{10_Collaborating on a Drupal Site}
+\include{11_Drupal Commerce}
+\include{12_Introduction to PHP}
+\include{13_Module building}
+\include{14_SEO in Drupal}
+
+
+\begin{appendices}
+    %\include{logistic}
+    
+    
+    \clearpage
+    \addcontentsline{toc}{chapter}{\textcolor{maincolor}{\IfLanguageName{dutch}{Bibliografie}{Bibliography}}}
+    \printbibliography[heading=bibintoc]
+    
+    
+    \clearpage
+    \addcontentsline{toc}{chapter}{\textcolor{maincolor}{Index}}
+    \printindex
+    
+\end{appendices}
+\end{document}
+
