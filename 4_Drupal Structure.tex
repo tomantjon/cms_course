@@ -49,23 +49,41 @@ Text:
 
 
 \section{Structural elements}
-Drupal core defines eight types of structural elements. To see an overview of those elements click on the Structure button in the administrative menu
+Drupal core defines eight types of structural elements. To see an overview of those elements click on the Structure button in the administrative menu.
 
-Figure 4.1: Structural Elements
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_structure}
+    \caption{Structural Elements}
+\end{figure}
 
 Each of these elements has a certain use within Drupal. The following list describes each of the structural elements. Don’t worry if not all the elements are clear to you, when you start changing and using your site the structure will become clear.
+\\
 
-\textbf{Block layout}: Blocks are site elements which can be positioned in different places on your site. For example, the search field, which is visible on the left side of your first Drupal page, is a Drupal block. You can put a block in different places on your page, these places are called regions. These regions depend on the Drupal theme you are using. When you click the Block layout link you will see the following page (Figure 4.2).
+\textbf{Block layout}: Blocks are site elements which can be positioned in different places on your site. For example, the search field, which is visible on the left side of your first Drupal page, is a Drupal block. You can put a block in different places on your page, these places are called \textbf{regions}. These regions depend on the Drupal theme you are using. When you click the \textbf{Block layout} link you will see the following page (Figure \ref{fig:admin_block_layout}).
 
-Figure 4.2: Block layout
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_block_layout}
+    \caption{Block Layout}
+    \label{fig:admin_block_layout}
+\end{figure}
 
-This page shows a list of the different regions and allows you to add blocks to each of these regions. You can click the link Demonstrate block regions(Bartik) to view the regions of the current theme (Bartik) (Figure 4.3).
+This page shows a list of the different regions and allows you to add blocks to each of these regions. You can click the link Demonstrate block regions(Olivero) to view the regions of the current theme (Olivero) (Figure \ref{fig:admin_block_layout}).
 
-Figure 4.3: Bartik regions
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_region_demo}
+    \caption{Olivero regions}
+    \label{fig:admin_region_demo}
+\end{figure}
 
+\\
 \textbf{Comment types}: The comment types page allows you to create and manage different comment types. When you add content to your site you can allow people to comment on the new content. The comment type defines the fields that the commenter has to fill out when he’s writing his comment. The default comment type has only one field: the comment body. We could, for example, create a new comment type which includes a field for the name and age of the commenter.
-Contact form: The Personal contact form is the form for site visitors to contact registered users; the name and recipients of this form cannot be edited. Other forms listed here are your configured site-wide contact forms, which site visitors can use to send mail to a centralized email address or addresses. You can edit the name and recipients of site-wide forms by choosing the Edit operation. You can also configure the fields and display of both personal and site-wide forms.
-Content types: The content types page is very important. The content types define which kind of information your CMS will manage. A content type has different fields. These fields define the information that is stored in the content type. By default, Drupal has two content types: Article and Basic page (Figure 4.4);
+\\
+\textbf{Contact form}: The Personal contact form is the form for site visitors to contact registered users; the name and recipients of this form cannot be edited. Other forms listed here are your configured site-wide contact forms, which site visitors can use to send mail to a centralized email address or addresses. You can edit the name and recipients of site-wide forms by choosing the Edit operation. You can also configure the fields and display of both personal and site-wide forms.
+\\
+\textbf{Content types}: The content types page is very important. The content types define which kind of information your CMS will manage. A content type has different fields. These fields define the information that is stored in the content type. By default, Drupal has two content types: Article and Basic page (Figure 4.4);
 
 Figure 4.4: Default content types
 
@@ -74,7 +92,7 @@ When you click the Manage fields button on the right you can see what kind of in
 Figure 4.5: Article content type fields
 
 Next to the Manage fields menu item tab you have the Manage form display and Manage display tabs. These allow you to edit which fields are displayed when an element is created/edited or viewed.
-
+\\
 \textbf{Display modes}: Display modes define different ways in which information is displayed. There are two types of display modes: form modes and view modes. Form modes are used when the content is created or edited, view modes when the content is viewed. When you go to Display modes → View modes (Figure 4.6) you will see the different ways in which a content type can be displayed.
 
 Figure 4.6: Default view modes
@@ -84,6 +102,7 @@ Figure 4.7: Display modes
 There you see the different display modes that you can use for your Article content type. At the bottom of the page you can enable other display modes in the custom display settings dropdown (Figure 4.8).
 
 Figure 4.8: Custom display settings
+\\
 \textbf{Menus}: Menus are easy. They define a menu with different menu items. Each menu has a corresponding block that is managed on the Block layout page.
 \textbf{Taxonomy}: A taxonomy defines lists of terms. These terms can be associated with the content. A list of terms is called a vocabulary. For example: if we have a site with news articles about sports we could add a tag to each article to tell what the article is about. These tags can be defined in a vocabulary.
 \textbf{Views}: A view enables you to create a display based on different content types. This course has a whole chapter dedicated to Drupal Views so we won’t go into details here.
@@ -139,10 +158,10 @@ Figure 4.16: News item fields
 In the following exercises we will review the content of this chapter by applying it to an example website. In the previous chapter we created the bitingbugs example website through the Acquia Dev Desktop. In this and the following chapters we will keep adding features to this site. Our goal is to create a web store for selling edible insects. The site will also provide a database with recipes so people know how to cook with the insects.
 
 \begin{enumerate}
-    \item Log in to your bitingbugs site (created in the previous chapter). Change the site name to Biting Bugs, and upload the file bitingbugs\textunderscore \textunderscore logo \textunderscore transp \textunderscore white\textunderscore right\textunderscore small.png (Available in the course files zip) as logo for the site, and bitingbugs-favicon.png as favicon.
-    \item Add the search block to the sidebar second region and disable the powered by Drupal block.
+    \item Log in to your bitingbugs site (created in the previous chapter). Change the site name to Biting Bugs, and upload the file \\ bitingbugs\textunderscore \textunderscore logo \textunderscore transp \textunderscore white\textunderscore right\textunderscore small.png (Available in the course files zip) as logo for the site, and bitingbugs-favicon.png as favicon.
+    \item Disable the powered by Drupal block and the rss feed.
     \item Add a comment type Answer to your bitingbugs site. We will use the comment type to allow users to answer a question. The comment type has two fields: answer (a number between 0 and 100000) and motivation (a textual explanation describing how they got the answer).
-    \item\ Add vocabulary Food types type recipe to your bitingbugs site. Add the following terms to the vocabulary: Indian, Chinese, vegetarian, vegan, baking
+    \item\ Add vocabulary Food types type recipe to your bitingbugs site. Add the following terms to the vocabulary: Indian, Chinese, vegetarian, vegan, baking, snack
     \item Add a new content type recipe to your bitingbugs site. The new content type has the following fields: Name (=Title), Ingredients (formatted, long), Directions (formatted, long, with summary), Plate image, Estimated time (integer, in minutes), Type (food types)
     Make sure the teaser only displays the Title and Image fields.
 \end{enumerate}
