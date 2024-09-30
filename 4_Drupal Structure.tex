@@ -10,11 +10,12 @@ All of the entities in Drupal are ‘fieldable’, meaning we can add fields to 
 \subsubsection{Field Types} 
 General: 
 \begin{itemize}
-    \item Boolean ­ On/off checkbox 
-    \item Comments ­ This field adds a ‘Add comment’ form and the submitted comments 
+    \item Boolean - On/off checkbox 
+    \item Comments - This field adds a ‘Add comment’ form and the submitted comments 
     \item Date 
     \item E­mail 
     \item Link 
+    \item Timestamp
 \end{itemize}
 
 Number: 
@@ -39,8 +40,8 @@ In Drupal we can link pieces of content to each other by using a reference field
 
 Text:
 \begin{itemize}
-    \item Text (formatted) ­ A single line text field, for short texts, allows formatted text (like html or wysiwyg). 
     \item List (text) ­ A list of text values. 
+    \item Text (formatted) ­ A single line text field, for short texts, allows formatted text (like html or wysiwyg). 
     \item Text (formatted, long) ­ A text area with multiple rows, allows formatted text (like html or wysiwyg). 
     \item Text (formatted, long, with summary) ­ Same as above but with an extra text area to add a summary. 
     \item Text (plain) ­ A single line text field, for plain unformatted text. 
@@ -49,12 +50,13 @@ Text:
 
 
 \section{Structural elements}
-Drupal core defines eight types of structural elements. To see an overview of those elements click on the Structure button in the administrative menu.
+Drupal core defines eight types of structural elements. To see an overview of those elements click on the Structure button in the administrative menu (Figure \ref{fig:struct_elements}).
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/ch4/admin_structure}
     \caption{Structural Elements}
+    \label{fig:struct_elements}
 \end{figure}
 
 Each of these elements has a certain use within Drupal. The following list describes each of the structural elements. Don’t worry if not all the elements are clear to you, when you start changing and using your site the structure will become clear.
@@ -62,16 +64,17 @@ Each of these elements has a certain use within Drupal. The following list descr
 
 \textbf{Block layout}: Blocks are site elements which can be positioned in different places on your site. For example, the search field, which is visible on the left side of your first Drupal page, is a Drupal block. You can put a block in different places on your page, these places are called \textbf{regions}. These regions depend on the Drupal theme you are using. When you click the \textbf{Block layout} link you will see the following page (Figure \ref{fig:admin_block_layout}).
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/ch4/admin_block_layout}
     \caption{Block Layout}
     \label{fig:admin_block_layout}
 \end{figure}
 
-This page shows a list of the different regions and allows you to add blocks to each of these regions. You can click the link Demonstrate block regions(Olivero) to view the regions of the current theme (Olivero) (Figure \ref{fig:admin_block_layout}).
+\\
+This page shows a list of the different regions and allows you to add blocks to each of these regions. You can click the link Demonstrate block regions(Olivero) to view the regions of the current theme (Olivero) (Figure \ref{fig:admin_region_demo}).
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/ch4/admin_region_demo}
     \caption{Olivero regions}
@@ -83,47 +86,107 @@ This page shows a list of the different regions and allows you to add blocks to 
 \\
 \textbf{Contact form}: The Personal contact form is the form for site visitors to contact registered users; the name and recipients of this form cannot be edited. Other forms listed here are your configured site-wide contact forms, which site visitors can use to send mail to a centralized email address or addresses. You can edit the name and recipients of site-wide forms by choosing the Edit operation. You can also configure the fields and display of both personal and site-wide forms.
 \\
-\textbf{Content types}: The content types page is very important. The content types define which kind of information your CMS will manage. A content type has different fields. These fields define the information that is stored in the content type. By default, Drupal has two content types: Article and Basic page (Figure 4.4);
+\textbf{Content types}: The content types page is very important. The content types define which kind of information your CMS will manage. A content type has different fields. These fields define the information that is stored in the content type. By default, Drupal has two content types: Article and Basic page (Figure \ref{fig:admin_content_types}).
 
-Figure 4.4: Default content types
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_content_types}
+    \caption{Default content types}
+    \label{fig:admin_content_types}
+\end{figure}
 
-When you click the Manage fields button on the right you can see what kind of information is stored in this content type. (Figure 4.5). As you can see, the Article content type has four fields: Body, Comments, Image and Tags.
 
-Figure 4.5: Article content type fields
+When you click the Manage fields button on the right you can see what kind of information is stored in this content type. (Figure \ref{fig:content_article_fields}). As you can see, the Article content type has four fields: Body, Comments, Image and Tags.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/content_article_fields}
+    \caption{Article content type fields}
+    \label{fig:content_article_fields}
+\end{figure}
 
 Next to the Manage fields menu item tab you have the Manage form display and Manage display tabs. These allow you to edit which fields are displayed when an element is created/edited or viewed.
 \\
-\textbf{Display modes}: Display modes define different ways in which information is displayed. There are two types of display modes: form modes and view modes. Form modes are used when the content is created or edited, view modes when the content is viewed. When you go to Display modes → View modes (Figure 4.6) you will see the different ways in which a content type can be displayed.
+\textbf{Display modes}: Display modes define different ways in which information is displayed. There are two types of display modes: form modes and view modes. Form modes are used when the content is created or edited, view modes when the content is viewed. When you go to Display modes → View modes (Figure \ref{fig:structure_view_modes}) you will see the different ways in which a content type can be displayed.
 
-Figure 4.6: Default view modes
-When you go to Structure → Content types → Article → Manage display you will see the following page:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/structure_view_modes}
+    \caption{Default view modes}
+    \label{fig:structure_view_modes}
+\end{figure}
 
-Figure 4.7: Display modes
-There you see the different display modes that you can use for your Article content type. At the bottom of the page you can enable other display modes in the custom display settings dropdown (Figure 4.8).
+When you go to Structure → Content types → Article → Manage display you will see the available display modes listed on top (Figure \ref{fig:article_display_mode}).
 
-Figure 4.8: Custom display settings
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/article_display_mode}
+    \caption{Article display modes}
+    \label{fig:article_display_mode}
+\end{figure}
+
+There you see the different display modes that you can use for your Article content type. At the bottom of the page you can enable other display modes in the custom display settings dropdown (Figure \ref{fig:article_custom_display}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/article_custom_display}
+    \caption{Custom display settings}
+    \label{fig:article_custom_display}
+\end{figure}
+
 \\
 \textbf{Menus}: Menus are easy. They define a menu with different menu items. Each menu has a corresponding block that is managed on the Block layout page.
+\\
 \textbf{Taxonomy}: A taxonomy defines lists of terms. These terms can be associated with the content. A list of terms is called a vocabulary. For example: if we have a site with news articles about sports we could add a tag to each article to tell what the article is about. These tags can be defined in a vocabulary.
+\\
 \textbf{Views}: A view enables you to create a display based on different content types. This course has a whole chapter dedicated to Drupal Views so we won’t go into details here.
+
 \section{Our example}
 \subsection{Change the site title and logo}
-To make our site a little bit prettier we will change the logo and title. To change the site title, go to Configuration → System → Basic Site settings. Change the site name there to Our first Drupal 8 site (Figure 4.9).
+To make our site a little bit prettier we will change the logo and title. To change the site title, go to Configuration → System → Basic Site settings. Change the site name there to 'News First'  (Figure \ref{fig:admin_site_details}).
 
-Figure 4.9: Changing the site title
-The logo is part of the Drupal theme you are using. To change the logo, go to: Appearance → Settings → Bartik → LOGO IMAGE. Uncheck Use the default logo supplied by the theme and upload the file drupal\textunderscore 8 \textunderscore logo.png (Available in the course files zip). Click Save configuration.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_site_details}
+    \caption{Changing the site title}
+    \label{fig:admin_site_details}
+\end{figure}
 
-Figure 4.10: Changed logo and title
-4.2.2	Removing the Search and Tools block
-On the right side of the page we have the Search and Tools block. We don’t need them for now so you can remove them by going to Structure → Block layout and disable  them (Figure 4.11). Click Save blocks.
+The logo is part of the Drupal theme you are using. To change the logo, go to: Appearance → Settings → Global Settings → LOGO IMAGE. Uncheck Use the default logo supplied by the theme and upload the file newssite\textunderscore logo.png (Available in the course files zip). Click Save configuration.
 
-Figure 4.11: Disable an existing block 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/site_main_logo}
+    \caption{Changed logo and title}
+    \label{fig:site_main_logo}
+\end{figure}
+
+
+\subsection{Removing unnecessary blocks}
+Currently we don't need to have a search option nor the RSS feed. We can remove them by going to Structure → Block layout and disabling them. (Figure \ref{fig:admin_disable_block}). Click Save blocks to confirm the new layout.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_disable_block}
+    \caption{Disabling an existing block }
+    \label{fig:admin_disable_block}
+\end{figure}
+
 \subsection{Adding a Taxonomy}
 To categorize the new items on our site we will add a taxonomy. This taxonomy will contain different types of news. Go to Structure → Taxonomy → Add vocabulary. Use the following settings:
-Name: news categories
-Description: Describes the type of the news item.
-Click Save. In Figure 4.12 you can see the empty vocabulary. Next we will add some terms to the vocabulary. 
-Figure 4.12: Adding vocabulary terms
+\textbf{Name}: News Categories
+\\
+\textbf{Description}: Describes the type of the news item.
+\\
+Click Save. In Figure \ref{fig:admin_taxonomy_terms} you can see the empty vocabulary. Next we will add some terms to the vocabulary.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_taxonomy_terms}
+    \caption{Adding vocabulary terms }
+    \label{fig:admin_taxonomy_terms}
+\end{figure}
+
 Click the Add term button and add the following terms:
 \begin{itemize}
     \item national news
@@ -132,25 +195,53 @@ Click the Add term button and add the following terms:
     \item media
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_taxonomy_add}
+    \caption{Adding vocabulary terms }
+    \label{fig:admin_taxonomy_add}
+\end{figure}
 
-Figure 4.13: Adding a vocabulary term
-To see an overview of the terms you have added go to Structure → Taxonomy and click the List items button next to your vocabulary. (Figure 4.14)
+To see an overview of the terms you have added go to Structure → Taxonomy and click the List items button next to your vocabulary. (Figure \ref{fig:admin_taxonomy_list})
 
-Figure 4.14: Vocabulary terms
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/admin_taxonomy_list}
+    \caption{Vocabulary terms}
+    \label{fig:admin_taxonomy_list}
+\end{figure}
+
+
 \subsection{Adding the News Item content type}
 Since we are going to store news items in our CMS we will need to add the News Item content type. Go to: Structure → Content types → Add content type.
 Give it the following properties:
-Name: News Item
-Description: Some news!
-At the bottom of the page you can see some settings for this content type. Explore the settings, the names are very descriptive so most of them should be clear without further explanation. These are general settings that apply to all instances of this content type. You are able to change these for each instance individually when you create them.
-Click Save and manage fields.
+\textbf{Name}: News Item
+\\
+\textbf{Description}: Some news!
+\\
+At the bottom of the page you can see some settings for this content type. Explore the settings, the names are very descriptive so most of them should be clear without further explanation. These are general settings that apply to all instances of this content type. You are able to change these for each instance individually when you create them. In most cases, when you create a new content type, you always want to untick the boxes under 'Menu settings'. It's highly unlikely that you want new content to be added to a menu. 
+So go ahead and untick the box 'Main navigation' in the 'Menu settings'. 
 
-Figure 4.15: Manage fields
+(Figure \ref{fig:contenttype_news_add})
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/ch4/contenttype_news_add}
+    \caption{Adding the News Item Content Type}
+    \label{fig:contenttype_news_add}
+\end{figure}
+
+Click 'Save and manage fields'.
+
 Add the following fields to the News Item content type: 
-Body: (this item is already there, leave it as it is)
-NewsTitle: (Text/plain, Maximum length = 255, number of values = 1) 
-Image: (Image, number of values = 1)
-News category: (Taxonomy term, number of values = unlimited, reference method = default, Vocabulary: news categories, Create referenced entities if they don’t already exist).
+\textbf{Body}: (this item is already there, leave it as it is)
+\\
+\textbf{NewsTitle}: (Text/plain, Maximum length = 255, number of values = 1) 
+\\
+\textbf{News Item Image}: (Image, number of values = 1)
+\textbf{News category}: (Taxonomy term, number of values = unlimited, reference method = default, Vocabulary: news categories, Create referenced entities if they don’t already exist).
 In figure 4.16 you can see an overview of the fields.
 
 Figure 4.16: News item fields

@@ -10,7 +10,7 @@ To install a new Drupal site using composer is very easy and only requires one c
     composer create-project drupal/recommended-project my_site_name_dir
 \end{minted}
 
-This will download the latest stable version of Drupal in the current folder. WHen using XAMPP, you need to put all your websites in the htdocs folder of your XAMPP installation. The default path would be 'C:\textbackslash xampp\textbackslash htdocs'.
+This will download the latest stable version\footnote{Make sure that your environment meets all the requirements of the Drupal Version. For Drupal 11, PHP 8.3 is necessary as well as a certain version of MySQL. XAMPP does not always support the latest version of PHP/MySQL. You can install other versions of Drupal by defining the version in composer i.e. drupal/recommended-version:10.3.5} of Drupal in the current folder. WHen using XAMPP, you need to put all your websites in the htdocs folder of your XAMPP installation. The default path would be 'C:\textbackslash xampp\textbackslash htdocs'.
 \\\\
 The 'recommended-project' creates Drupal the recommended way:
 \begin{itemize}
@@ -83,7 +83,7 @@ Drupal continues to install the website and connect to the database to store all
 
 For our site we'll fill in the following details:
 \begin{itemize}
-    \item Site name: News First
+    \item Site name: Newssite
     \item Site email address: info@news.be
     \item Username: admin
     \item Password: drupal
